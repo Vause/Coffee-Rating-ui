@@ -12,7 +12,6 @@ const RatingList = () => {
     const retrieveRatings = async () => {
         try {
            const response = await getAll();
-           console.log(response.data.data);
            setRatings(response.data.data);
         } catch (e) {
             console.error(e);
@@ -54,7 +53,7 @@ const RatingList = () => {
                             <td className="text-center">No Milk Used</td> : <td className="text-center">{rating.milk_amount}</td>}
                             {rating.milk_heat_time === 0 ?
                             <td className="text-center">No Milk Used</td> : <td className="text-center">{rating.milk_heat_time}</td>}
-                            <td className="text-center">4</td>
+                            <td className="text-center">{rating.total_rating}</td>
 
                             <td className="text-center">
                                 <div className="btn-group">
