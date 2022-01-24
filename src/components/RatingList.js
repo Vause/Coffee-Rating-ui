@@ -19,10 +19,10 @@ const RatingList = () => {
     };
 
     return (
-        <table className="table">
+        <table className="table" style={{border: "3px solid rgb(0, 0, 0)", backgroundColor: "#6f4e37"}}>
             <thead>
                 <tr>
-                    <th className="text-center">Coffee Brand</th>
+                    <th className="text-center text-capitalize">Coffee brand</th>
                     <th className="text-center">Coffee Amount (g)</th>
                     <th className="text-center">Brew Method</th>
                     <th className="text-center">Coffee Roast</th>

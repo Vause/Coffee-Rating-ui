@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { create } from '../services/api'
 
 const CreateRating = () => {
@@ -19,6 +20,7 @@ const CreateRating = () => {
   };
   const [rating, setRating] = useState(initialRatingState);
   const [submitted, setSubmitted] = useState(false);
+  let history = useHistory();
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -51,17 +53,24 @@ const CreateRating = () => {
     }
   };
 
-  const newRating = () => {
-    setRating(initialRatingState);
-    setSubmitted(false);
-  };
+  const redirectToHome = () => {
+    history.push('/');
+}
+
+const newRating = () => {
+  setRating(initialRatingState);
+  setSubmitted(false);
+};
 
   return (
     <div className="submit-form">
       {submitted ? (
         <div>
           <h4>You submitted successfully!</h4>
-          <button className="btn btn-success" onClick={newRating}>
+          <button className="btn btn-success" onClick={redirectToHome}>
+            Home
+          </button>
+          <button className="btn btn-primary m-3" onClick={newRating}>
             Add Another Rating
           </button>
         </div>
