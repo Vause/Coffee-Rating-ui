@@ -208,7 +208,7 @@ const UpdateRating = props => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="total-currentRating">Overall currentRating</label>
+            <label htmlFor="total-currentRating">Overall Rating</label>
             <input
               type="number"
               className="form-control"
